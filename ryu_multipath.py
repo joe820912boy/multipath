@@ -282,7 +282,7 @@ class ProjectController(app_manager.RyuApp):
             # print dpid, pkt
             src_ip = arp_pkt.src_ip
             dst_ip = arp_pkt.dst_ip
-            if arp_pkt.opcode == arp.ARP_REPLY:
+            if arp_pkt.opcode == arp.ARP_REPLY: #ARP_REPLY means host replied ARP broadcast
                 self.arp_table[src_ip] = src
                 h1 = self.hosts[src]
                 h2 = self.hosts[dst]
